@@ -2,6 +2,21 @@
 
 This is a Laravel project for managing guest room bookings for house owners.
 
+## Sample Data
+
+### Owners
+
+| Owner Name | Owner Password |
+|------------|----------------|
+| John Doe   | 1234567890     |
+
+### Guests
+
+| Guest Name     | Guest Password |
+|----------------|----------------|
+| Sarah Johnson  | 1234567890     |
+
+
 ## Execution
 
 1. Prerequisites

@@ -1,0 +1,49 @@
+Table: owners
+Columns:
+
+    id (Primary Key)
+    owner_name
+    owner_email (Unique)
+    owner_phone
+    owner_password
+
+Table: guests
+Columns:
+
+    id (Primary Key)
+    guest_name
+    guest_email (Unique)
+    guest_phone
+    guest_password
+
+Table: properties
+Columns:
+
+    id (Primary Key)
+    owner_id (Foreign Key referencing owners.id)
+    property_name
+    property_address
+
+Table: rooms
+Columns:
+
+    id (Primary Key)
+    property_id (Foreign Key referencing properties.id)
+    room_name
+    number_of_beds
+    room_rent
+    min_stay
+    max_stay
+    image_path
+
+Table: bookings
+Columns:
+
+    id (Primary Key)
+    guest_id (Foreign Key referencing guests.id)
+    owner_id (Foreign Key referencing owners.id)
+    room_id (Foreign Key referencing rooms.id)
+    room_type
+    amount_paid
+    start_date
+    end_date

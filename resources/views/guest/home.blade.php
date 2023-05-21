@@ -21,7 +21,6 @@
             <div class="border-end bg-white" id="sidebar-wrapper">
                 <div class="sidebar-heading border-bottom bg-light">Guest Room Booking</div>
                 <div class="list-group list-group-flush">
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Current Bookings</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{{ url('property') }}">Properties</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{{ url('history', $data->id ) }}">Booking History</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Profile</a>

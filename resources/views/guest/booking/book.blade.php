@@ -18,8 +18,17 @@
             @endif
             @csrf
                 <div class="form-group">
+                    <strong>Guest Name</strong>
+                    <input class="form-control" type="text" name="guest_name" value="{{ old('guest_name') }}">
+                    <span class="text text-danger">@error('guest_name') {{ $message }} @enderror</span>
+                </div>
+                <div class="form-group">
+                    <strong>Property Name</strong>
+                    <input class="form-control" type="text" name="property_name" value="{{ old('property_name') }}">
+                </div>
+                <div class="form-group">
                     <strong>Room Type</strong>
-                    <input class="form-control" type="text" name="room_type" value="{{ old('start_date', $details['room_name']) }}" readonly>
+                    <input class="form-control" type="text" name="room_type" value="{{ old('room_type', $details['room_name']) }}" readonly>
                 </div>
                 <div class="form-group">
                     <strong>Room Rent (Rupees/Day)</strong>

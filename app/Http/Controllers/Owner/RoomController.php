@@ -127,9 +127,10 @@ class RoomController extends Controller
 
     public function history($id){
 
-        $data = Guest::where('id', '=', Session::get('loginId'))->first();
-        $booking = Booking::where('guest_id', '=', $id)->get();
+        $data = Owner::where('id', '=', Session::get('loginId'))->first();
         
+        $booking = Booking::where('owner_id', '=', $data->id)->get();
+
         //return compact('data', 'booking');
         return view('owner.history', compact('data', 'booking'));
     }

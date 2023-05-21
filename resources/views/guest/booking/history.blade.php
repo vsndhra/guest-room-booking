@@ -17,7 +17,8 @@
             <table class="table table-bordered table-striped table-hover datatable datatable-Room" style="text-align: center;">
                 <thead>
                     <tr>
-                        <th>S.No.</th>
+                        <th>S.No</th>
+                        <th>Property Name</th>
                         <th>Room Type</th>
                         <th>Amount Paid</th>
                         <th>Start Date</th> 
@@ -29,6 +30,7 @@
                     @foreach ($booking as $bookings)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
+                        <td>{{ $bookings['property_name'] }}</td>
                         <td>{{ $bookings['room_type'] }}</td>
                         <td>{{ $bookings['amount_paid'] }}</td>
                         <td>{{ $bookings['start_date'] }}</td>

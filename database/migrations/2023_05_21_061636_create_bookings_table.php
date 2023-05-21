@@ -16,6 +16,8 @@ return new class extends Migration
             $table->unsignedBigInteger('guest_id');
             $table->unsignedBigInteger('owner_id');
             $table->unsignedBigInteger('room_id');
+            $table->string('guest_name');
+            $table->string('property_name');
             $table->string('room_type');
             $table->integer('amount_paid');
             $table->date('start_date');

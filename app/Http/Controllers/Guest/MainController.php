@@ -60,8 +60,10 @@ class MainController extends Controller
         $request->validate([
             'start_date'=>'required',
             'end_date'=>'required',
+            'guest_name'=>'required|string',
+            'property_name'=>'required|string',
             'room_type'=>'required|string',
-            'room_rent'=>'required|numeric'
+            'room_rent'=>'required|numeric',
         ]);
 
         $booking = new Booking();
@@ -79,6 +81,8 @@ class MainController extends Controller
         $booking->guest_id = Session::get('loginId');
         $booking->owner_id = $ownerId;
         $booking->room_id = $id;
+        $booking->guest_name = $request->guest_name;
+        $booking->property_name = $request->property_name;
         $booking->room_type = $request->room_type;
         $booking->amount_paid = $days*$request->room_rent;
         $booking->start_date = $request->start_date;

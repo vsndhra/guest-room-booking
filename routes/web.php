@@ -57,6 +57,7 @@ Route::get('/room/create', [RoomController::class, 'create'])->name('room.create
 Route::get('/room/edit/{id}', [RoomController::class, 'edit'])->name('room.edit');
 Route::get('/room/view/{id}', [RoomController::class, 'viewRoom'])->name('room.view');
 Route::get('/history/{id}', [RoomController::class, 'history'])->name('history');
+
 Route::post('/create-room', [RoomController::class, 'createRoom'])->name('create-room');
 Route::put('/update-room/{id}', [RoomController::class, 'updateRoom'])->name('update-room');
 Route::delete('/delete-room/{id}', [RoomController::class, 'deleteRoom'])->name('delete-room');
@@ -66,7 +67,8 @@ Route::get('/property', [MainController::class, 'listProperty'])->name('list-pro
 Route::get('/view-property/{id}', [MainController::class, 'viewProperty'])->name('view-property');
 Route::get('/room-details/{id}', [MainController::class, 'roomDetails'])->name('room-details');
 Route::get('/book/{id}', [MainController::class, 'book'])->name('book');
-Route::get('/history/{id}', [RoomController::class, 'history'])->name('history');
+Route::get('/history/{id}', [MainController::class, 'history'])->name('history');
+
 Route::post('/book-room/{id}', [MainController::class, 'bookRoom'])->name('book-room');
 
 // Route::post('/login', [LoginController::class, 'login'])->name('login')->middleware('alreadyLogged');

@@ -21,10 +21,6 @@ Route::get('/', function () {
     return view('master');
 });
 
-// For development
-Route::get('/dashboard', function () {
-    return view('dashboard');
-});
 
 // GET Routes for loggin in
 Route::get('/owner-login', [LoginController::class, 'ownerLogin'])->name('owner-login');
@@ -69,13 +65,13 @@ Route::get('/room-details/{id}', [MainController::class, 'roomDetails'])->name('
 Route::get('/book/{id}', [MainController::class, 'book'])->name('book');
 Route::get('/history/{id}', [MainController::class, 'history'])->name('history');
 
-Route::post('/book-room/{id}', [MainController::class, 'bookRoom'])->name('book-room');
+Route::post('/book-room/{id}', [MainController::class, 'bookRoom'])->name('book-room'); //book room for guest
 
 // Route::post('/login', [LoginController::class, 'login'])->name('login')->middleware('alreadyLogged');
 // Route::post('/register', [LoginController::class, 'register'])->name('register')->middleware('alreadyLogged'); //worked
 
-Route::get('/admin', [LoginController::class, 'ownerDashboard']); 
-Route::get('/dashboard', [LoginController::class, 'guestDashboard']); 
+Route::get('/admin', [LoginController::class, 'ownerDashboard']); //diplays owner dashboard
+Route::get('/dashboard', [LoginController::class, 'guestDashboard']); //displays guest dhashboard
 
-Route::get('/logout', [LoginController::class, 'logout']); 
+Route::get('/logout', [LoginController::class, 'logout']);  //loggin out
 

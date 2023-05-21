@@ -11,6 +11,7 @@ use Session;
 
 class PropertyController extends Controller
 {
+    //lists the properties owned by the owner
     public function listProperty(){
         
         $property = array();
@@ -25,6 +26,7 @@ class PropertyController extends Controller
         return view('owner.property.list', compact('data', 'property'));
     }
 
+    //displays the create property form 
     public function create(){
 
         $data = Owner::where('id', '=', Session::get('loginId'))->first();
@@ -32,6 +34,7 @@ class PropertyController extends Controller
         return view('owner.property.create', compact('data'));
     }
 
+    // handles the property creation action
     public function createProperty(Request $request){
 
         $request->validate([
@@ -54,6 +57,7 @@ class PropertyController extends Controller
 
     }
 
+    //displays the form to edit the property
     public function edit($id, Request $request){
 
         $data = Owner::where('id', '=', Session::get('loginId'))->first();
@@ -62,6 +66,7 @@ class PropertyController extends Controller
         return view('owner.property.edit', compact('data', 'property'));
     }
 
+    //handles update property action
     public function updateProperty($id, Request $request){
 
         $request->validate([
@@ -87,6 +92,7 @@ class PropertyController extends Controller
         }
     }
 
+    //deletes the property
     public function deleteProperty($id){
         
         $property = Property::find($id);

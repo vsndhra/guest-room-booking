@@ -13,22 +13,27 @@ use Session;
 
 class LoginController extends Controller
 {
+    //display owner login form
     public function ownerLogin(){
         return view('auth.houseowner');
     }
 
+    //displays the guest login form
     public function guestLogin(){
         return view('auth.guest');
     }
 
+    //displays owner register form
     public function ownerRegister(){
         return view('auth.registerOwner');
     }
 
+    //displays guest register form
     public function guestRegister(){
         return view('auth.registerGuest');
     }
 
+    //handles owner log in
     public function loginOwner(Request $request){
         
         $request->validate([
@@ -52,6 +57,7 @@ class LoginController extends Controller
 
     }
 
+    //handles guest log in
     public function loginGuest(Request $request){
         
         $request->validate([
@@ -75,6 +81,7 @@ class LoginController extends Controller
 
     }
 
+    //handles owner registration
     public function registerOwner(Request $request){
 
         $request->validate([
@@ -108,6 +115,7 @@ class LoginController extends Controller
 
     }
 
+    //handles guest registration
     public function registerGuest(Request $request){
 
         $request->validate([
@@ -139,6 +147,7 @@ class LoginController extends Controller
 
     }
 
+    //displays dashboard for owner
     public function ownerDashboard(){
 
         $data = array();
@@ -164,6 +173,7 @@ class LoginController extends Controller
         return view('owner.analytics', compact('data', 'totalProperties', 'totalRooms', 'totalBookings'));
     }
 
+    //displays guest dashboard
     public function guestDashboard(){
 
         $data = array();
@@ -173,6 +183,7 @@ class LoginController extends Controller
         return view('guest.home', compact('data'));
     }
 
+    //handles log out action
     public function logout(){
         if(Session::has('loginId')){
             Session::pull('loginId');

@@ -13,6 +13,7 @@ use Session;
 
 class RoomController extends Controller
 {
+    //lists the rooms avaialable within the property
     public function listRoom($id){
         
         $room = array();
@@ -27,6 +28,7 @@ class RoomController extends Controller
         return view('owner.room.list', compact('data', 'room'));
     }
 
+    //displays the form to create room 
     public function create(){
 
         $data = Owner::where('id', '=', Session::get('loginId'))->first();
@@ -34,6 +36,7 @@ class RoomController extends Controller
         return view('owner.room.create', compact('data'));
     }
 
+    //handles the room creation action
     public function createRoom(Request $request){
 
         $request->validate([
@@ -72,6 +75,7 @@ class RoomController extends Controller
 
     }
 
+    //displays the edit room form
     public function edit($id, Request $request){
 
         $data = Owner::where('id', '=', Session::get('loginId'))->first();
@@ -80,6 +84,7 @@ class RoomController extends Controller
         return view('owner.room.edit', compact('data', 'room'));
     }
 
+    //displays the room details ie. photo of the room
     public function viewRoom($id){
 
         $data = Owner::where('id', '=', Session::get('loginId'))->first();
@@ -89,6 +94,7 @@ class RoomController extends Controller
 
     }
 
+    //handles the update room action
     public function updateRoom($id, Request $request){
 
         $request->validate([
@@ -125,6 +131,7 @@ class RoomController extends Controller
         }
     }
 
+    //displays the booking history for the owner
     public function history($id){
 
         $data = Owner::where('id', '=', Session::get('loginId'))->first();
@@ -135,6 +142,7 @@ class RoomController extends Controller
         return view('owner.history', compact('data', 'booking'));
     }
 
+    //delete room
     public function deleteRoom($id){
         
         $room = Room::find($id);

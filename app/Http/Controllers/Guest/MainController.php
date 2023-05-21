@@ -14,6 +14,7 @@ use Session;
 
 class MainController extends Controller
 {
+    //lists all the properties available to the guests
     public function listProperty(){
 
         $property = array();
@@ -25,6 +26,7 @@ class MainController extends Controller
         return view('guest.view.property', compact('data', 'property'));
     }
 
+    //lists all the rooms available within the property
     public function viewProperty($id){
 
         $room = array();
@@ -37,6 +39,7 @@ class MainController extends Controller
 
     }
 
+    //displays room details i.e photo of the room
     public function roomDetails($id){
 
         $data = Guest::where('id', '=', Session::get('loginId'))->first();
@@ -45,6 +48,7 @@ class MainController extends Controller
         return view('guest.view.details', compact('data', 'imagePath'));
     }
 
+    //displays the booking form with few prefilled details 
     public function book($id){
 
         $data = Guest::where('id', '=', Session::get('loginId'))->first();
@@ -55,6 +59,7 @@ class MainController extends Controller
 
     }
 
+    //handles the booking action
     public function bookRoom($id, Request $request){
 
         $request->validate([
@@ -99,6 +104,7 @@ class MainController extends Controller
 
     }
 
+    //displays the booking history of the guest
     public function history($id){
 
         $data = Guest::where('id', '=', Session::get('loginId'))->first();

@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Guest;
+use Hash;
 
 class GuestSeeder extends Seeder
 {
@@ -17,14 +18,14 @@ class GuestSeeder extends Seeder
             'guest_name' => 'Sarah Johnson',
             'guest_email' => 'sarah@example.com',
             'guest_phone' => '1234567890',
-            'guest_password' => bcrypt('password'),
+            'guest_password' => Hash::make('password'),
         ]);
         
         Guest::create([
             'guest_name' => 'Michael Smith',
             'guest_email' => 'michael@example.com',
             'guest_phone' => '9876543210',
-            'guest_password' => bcrypt('password'),
+            'guest_password' => Hash::make('password'),
         ]);
     }
 }

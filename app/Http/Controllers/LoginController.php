@@ -37,7 +37,7 @@ class LoginController extends Controller
     public function loginOwner(Request $request){
         
         $request->validate([
-            'email'=>'required|email',
+            'email'=>'required',
             'password'=>'required|min:5|max:12'
         ]);
 
@@ -90,14 +90,6 @@ class LoginController extends Controller
             'phone'=>'required',
             'password'=>'required|min:5|max:12'
         ]);
-
-        // $route = $request->route()->getName();
-
-        // if($route == 'register-owner'){
-        //     $is_admin = 1;
-        // }
-
-        //return $request;
 
         $owner = new Owner();
 

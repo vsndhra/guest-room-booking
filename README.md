@@ -8,13 +8,13 @@ This is a Laravel project for managing guest room bookings for house owners.
 
 | Owner Name         | Owner Password |
 |--------------------|----------------|
-| john@example.com   | 1234567890     |
+| john@example.com   | password       |
 
 ### Guests
 
 | Guest Name         | Guest Password |
 |--------------------|----------------|
-| sarah@example.com  | 1234567890     |
+| sarah@example.com  | password       |
 
 
 ## Execution

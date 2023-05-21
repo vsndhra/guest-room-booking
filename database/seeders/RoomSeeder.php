@@ -22,7 +22,7 @@ class RoomSeeder extends Seeder
             'room_rent' => 200,
             'min_stay' => 1,
             'max_stay' => 7,
-            'image_path' => 'path/to/image1.jpg',
+            'image_path' => 'image1.jpg',
         ]);
 
         Room::create([
@@ -32,7 +32,7 @@ class RoomSeeder extends Seeder
             'room_rent' => 150,
             'min_stay' => 2,
             'max_stay' => 14,
-            'image_path' => 'path/to/image2.jpg',
+            'image_path' => 'image2.jpg',
         ]);
 
         //property_id 2 also has two rooms
@@ -43,7 +43,7 @@ class RoomSeeder extends Seeder
             'room_rent' => 250,
             'min_stay' => 1,
             'max_stay' => 7,
-            'image_path' => 'path/to/image3.jpg',
+            'image_path' => 'image3.jpg',
         ]);
 
         Room::create([
@@ -53,7 +53,7 @@ class RoomSeeder extends Seeder
             'room_rent' => 180,
             'min_stay' => 2,
             'max_stay' => 14,
-            'image_path' => 'path/to/image4.jpg',
+            'image_path' => 'image4.jpg',
         ]);
 
         // Assuming property_id 3 also has two rooms
@@ -64,7 +64,7 @@ class RoomSeeder extends Seeder
             'room_rent' => 300,
             'min_stay' => 1,
             'max_stay' => 7,
-            'image_path' => 'path/to/image5.jpg',
+            'image_path' => 'image5.jpg',
         ]);
 
         Room::create([
@@ -74,7 +74,7 @@ class RoomSeeder extends Seeder
             'room_rent' => 220,
             'min_stay' => 2,
             'max_stay' => 14,
-            'image_path' => 'path/to/image6.jpg',
+            'image_path' => 'image6.jpg',
         ]);
 
         // Assuming property_id 4 also has two rooms
@@ -85,7 +85,7 @@ class RoomSeeder extends Seeder
             'room_rent' => 150,
             'min_stay' => 1,
             'max_stay' => 7,
-            'image_path' => 'path/to/image7.jpg',
+            'image_path' => 'image7.jpg',
         ]);
 
         Room::create([
@@ -95,7 +95,7 @@ class RoomSeeder extends Seeder
             'room_rent' => 280,
             'min_stay' => 2,
             'max_stay' => 14,
-            'image_path' => 'path/to/image8.jpg',
+            'image_path' => 'image8.jpg',
         ]);
     }
 }

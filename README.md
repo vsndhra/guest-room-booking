@@ -6,15 +6,15 @@ This is a Laravel project for managing guest room bookings for house owners.
 
 ### Owners
 
-| Owner Name | Owner Password |
-|------------|----------------|
-| John Doe   | 1234567890     |
+| Owner Name         | Owner Password |
+|--------------------|----------------|
+| john@example.com   | 1234567890     |
 
 ### Guests
 
-| Guest Name     | Guest Password |
-|----------------|----------------|
-| Sarah Johnson  | 1234567890     |
+| Guest Name         | Guest Password |
+|--------------------|----------------|
+| sarah@example.com  | 1234567890     |
 
 
 ## Execution
